@@ -1,0 +1,10 @@
+*.zip
+*.DS_Store
+**/submissions/*
+**/tmp/*
+**/out/*
+log_*
+*.pkl
+*.egg-info
+*.pyc
+*.csv
