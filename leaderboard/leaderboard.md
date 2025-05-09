@@ -48,7 +48,7 @@ For each call to `get_score_by_rank(rank)`, output the **score** of the player w
 
 ### Sample 0
 
-`plaintext
+```plaintext
 << in
 add_score 1 100
 get_rank 1
@@ -68,11 +68,11 @@ get_score_by_rank 1
 1
 2
 120
-`
+```
 
 ### Sample 1
 
-`plaintext
+```plaintext
 << in
 add_score 1 100
 add_score 2 200
@@ -100,4 +100,26 @@ get_score_by_rank 0
 150
 -1
 -1
-`
+```
+
+### Sample 2
+
+```plaintext
+<< in
+add_score 1 100
+get_rank 1
+add_score 2 100
+get_rank 1
+get_rank 2
+add_score 3 90
+get_score_by_rank 3
+
+>> out
+1
+1
+1
+1
+1
+2
+-1
+```
