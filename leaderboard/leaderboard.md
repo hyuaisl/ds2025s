@@ -6,7 +6,7 @@ You're developing a gaming leaderboard for an online multiplayer game. Players r
 
 Implement the following methods for the `Leaderboard` class:
 
-- `add_score(player_id: int, score: int) -> int`: Adds a player's score to the leaderboard. If the player already exists, their score is updated. The method should return the player's rank after adding the score.
+- `add_score(player_id: int, score: int) -> int`: Adds a player's score to the leaderboard. If the player already exists, their score is updated. The method should return the player's rank after adding the score. The rank is defined as the number of players with higher scores plus one. If two players have the same score, they share the same rank.
 
 - `get_rank(player_id: int) -> int`: Returns the rank of the player with the given `player_id`. If the player does not exist, return `-1`.
 
@@ -16,7 +16,7 @@ Implement the following methods for the `Leaderboard` class:
 
 `Leaderboard` 클래스에 다음 메서드들을 구현하세요:
 
-- `add_score(player_id: int, score: int) -> int`: 플레이어의 점수를 리더보드에 추가합니다. 이미 존재하는 플레이어일 경우, 점수를 업데이트합니다. 이 메서드는 점수를 추가한 후 해당 플레이어의 순위를 반환해야 합니다.
+- `add_score(player_id: int, score: int) -> int`: 플레이어의 점수를 리더보드에 추가합니다. 이미 존재하는 플레이어일 경우, 점수를 업데이트합니다. 이 메서드는 점수를 추가한 후 해당 플레이어의 순위를 반환해야 합니다. 순위는 더 높은 점수를 가진 플레이어의 수에 1을 더한 값으로 정의됩니다. 두 플레이어가 같은 점수를 가질 경우, 같은 순위를 공유합니다.
 
 - `get_rank(player_id: int) -> int`: 주어진 `player_id`를 가진 플레이어의 순위를 반환합니다. 플레이어가 존재하지 않으면 `-1`을 반환합니다.
 
@@ -111,6 +111,7 @@ get_rank 1
 add_score 2 100
 get_rank 1
 get_rank 2
+add_score 1 90
 add_score 3 90
 get_score_by_rank 3
 
@@ -120,6 +121,36 @@ get_score_by_rank 3
 1
 1
 1
+1
+3
+90
+```
+
+### Sample 3
+
+```plaintext
+<< in
+add_score 1 300
+add_score 2 200
+add_score 3 200
+add_score 4 150
+get_rank 1
+get_rank 2
+get_rank 3
+get_rank 4
+get_score_by_rank 2
+get_score_by_rank 3
+get_score_by_rank 4
+>> out
+1
 2
--1
+2
+4
+1
+2
+2
+4
+200
+200
+150
 ```
